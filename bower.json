@@ -1,0 +1,29 @@
+{
+	"name": "ng-lab",
+	"version": "0.0.0",
+	"description": "",
+	"keywords": [],
+	"homepage": "",
+	"license": "MIT",
+	"author": {
+		"name": "Roland Groza",
+		"email": "rolandjitsu@gmail.com"
+	},
+	"main": "",
+	"ignore": [],
+	"repository": {
+		"type": "git",
+		"url": ""
+	},
+	"dependencies": {
+		"angular": "1.4.x",
+		"angular-animate": "1.4.x",
+		"angular-aria": "1.4.x",
+		"angular-material": "^0.10.0",
+		"angular-messages": "1.4.x",
+		"angular-sanitize": "1.4.x",
+		"angular-touch": "1.4.x",
+		"normalize.css": "3.0.x",
+		"system.js": "0.18.x"
+	}
+}
