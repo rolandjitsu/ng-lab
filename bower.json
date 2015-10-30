@@ -19,11 +19,11 @@
 		"angular": "1.4.x",
 		"angular-animate": "1.4.x",
 		"angular-aria": "1.4.x",
-		"angular-material": "^0.10.0",
+		"angular-material": "1.0.0-rc2",
 		"angular-messages": "1.4.x",
 		"angular-sanitize": "1.4.x",
 		"angular-touch": "1.4.x",
-		"normalize.css": "3.0.x",
-		"system.js": "0.18.x"
+		"angular-ui-router": "0.2.x",
+		"normalize-css": "3.0.x"
 	}
 }

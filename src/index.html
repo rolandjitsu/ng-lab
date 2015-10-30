@@ -5,44 +5,35 @@
 		<base href='/'>
 		<meta http-equiv='x-ua-compatible' content='ie=edge'>
 		<meta name='viewport' content='initial-scale=1, maximum-scale=1, user-scalable=no'>
-		<title>NG Play</title>
+		<title>NG Lab</title>
 		<meta name="description" content=''>
 		<link rel='apple-touch-icon' href='apple-touch-icon.png'>
 		<link rel='stylesheet' href='lib/normalize.css'>
 		<link rel='stylesheet' href='https://fonts.googleapis.com/css?family=Roboto:300,400,700'>
 		<link rel='stylesheet' href='lib/angular-material.css'>
-		<style>
-			body {
-				font-family: 'Roboto', sans-serif;
-			}
-		</style>
+		<link rel='stylesheet' href='app/main.css'>
 	</head>
-	<body>
+	<body layout="column">
+		<div ui-view="main" layout="column" flex></div>
 		<!-- ES6 -->
+		<script src="lib/es6-shim.min.js"></script>
 		<script src="lib/system.js"></script>
-		<!-- App -->
 		<script>
 			System.defaultJSExtensions = true;
+			System.warnings = true;
 			System.config({
-				meta: {
-					'lib/angular': { format: 'global', exports: 'angular' },
-					'lib/angular-animate': { deps: ['angular'] },
-					'lib/angular-aria': { deps: ['angular'] },
-					'lib/angular-material': { deps: ['angular'] },
-					'lib/angular-messages': { deps: ['angular'] },
-					'lib/angular-touch': { deps: ['angular'] },
-					'lib/d3': { format: 'global', exports: 'd3' },
-					'lib/firebase': { format: 'global', exports: 'Firebase' }
-				},
 				map: {
-					'angular': 'lib/angular',
-					'angular-animate': 'lib/angular-animate',
-					'angular-aria': 'lib/angular-aria',
-					'angular-material': 'lib/angular-material',
-					'angular-messages': 'lib/angular-messages',
-					'angular-touch': 'lib/angular-touch',
-					'd3': 'lib/d3',
-					'firebase': 'lib/firebase'
+					'angular': 'lib/angular.js',
+					'angular-animate': 'lib/angular-animate.js',
+					'angular-aria': 'lib/angular-aria.js',
+					'angular-material': 'lib/angular-material.js',
+					'angular-messages': 'lib/angular-messages.js',
+					'angular-sanitize': 'lib/angular-sanitize.js',
+					'angular-touch': 'lib/angular-touch.js',
+					'angular-ui-router': 'lib/angular-ui-router.js'
+				},
+				meta: {
+					'angular': { format: 'global' }
 				}
 			});
 			System.import('app/bootstrap').catch(
