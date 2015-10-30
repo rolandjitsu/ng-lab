@@ -1,6 +1,6 @@
 # AngularJS Laboratory
 
-[![Dependency Status](https://gemnasium.com/rolandjitsu/ng2-lab.svg)](https://gemnasium.com/rolandjitsu/ng2-lab)
+[![Dependency Status](https://gemnasium.com/rolandjitsu/ng-lab.svg)](https://gemnasium.com/rolandjitsu/ng-lab)
 [![Join the chat at https://gitter.im/rolandjitsu/ng-lab](https://badges.gitter.im/Join%20Chat.svg)](https://gitter.im/rolandjitsu/ng-lab)
 > Playground for experimenting with some of the core features of [AngularJS](https://angularjs.org) and integration with other software and services.
 
