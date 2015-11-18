@@ -19,6 +19,11 @@ const NG_LAB_TS_PROJECT = ts.createProject('tsconfig.json');
 
 const LAB_WEB_SERVER_PORT = 8080;
 
+const GULP_SIZE_DEFAULT_OPTS = {
+	showFiles: true,
+	gzip: true
+};
+
 const PATHS = {
 	lib: [
 		'node_modules/systemjs/dist/system.*',
@@ -36,14 +41,14 @@ const PATHS = {
 	typings: ['tsd_typings/tsd.d.ts'],
 	src: {
 		root: '/src',
+		static: 'src/**/*.{svg,jpg,png,ico}',
 		ts: ['src/**/*.ts'],
 		html: 'src/**/*.html',
 		scss: [
 			'!src/app/vars.scss',
 			'!src/app/mixins.scss',
 			'src/**/*.scss'
-		],
-		static: 'src/**/*.{svg,jpg,png,ico}'
+		]
 	},
 	dist: 'dist'
 };
@@ -95,10 +100,7 @@ gulp.task('deps', ['install/bower', 'install/tsd'], () => {
 	return gulp
 		.src(PATHS.lib)
 		.pipe(changed(libsPath))
-		.pipe(size({
-			showFiles: true,
-			gzip: true
-		}))
+		.pipe(size(GULP_SIZE_DEFAULT_OPTS))
 		.pipe(gulp.dest(libsPath));
 });
 
@@ -114,10 +116,7 @@ gulp.task('build/js', (done) => {
 		.pipe(ts(NG_LAB_TS_PROJECT))
 		.js
 		.pipe(sourcemaps.write('.'))
-		.pipe(size({
-			showFiles: true,
-			gzip: true
-		}))
+		.pipe(size(GULP_SIZE_DEFAULT_OPTS))
 		.pipe(gulp.dest(PATHS.dist));
 });
 
@@ -125,15 +124,12 @@ gulp.task('serve/html', () => {
 	return gulp
 		.src(PATHS.src.html)
 		.pipe(changed(PATHS.dist))
-		.pipe(size({
-			showFiles: true,
-			gzip: true
-		}))
+		.pipe(size(GULP_SIZE_DEFAULT_OPTS))
 		.pipe(gulp.dest(PATHS.dist));
 });
 
 gulp.task('build/css', () => {
-	let sassConfig = {
+	const SASS_CONFIG = {
 		includePaths: [
 			`${PATHS.src.root}/app`
 		],
@@ -147,13 +143,10 @@ gulp.task('build/css', () => {
 		.pipe(changed(PATHS.dist, { extension: '.css' }))
 		.pipe(plumber())
 		.pipe(sourcemaps.init())
-		.pipe(sass(sassConfig).on('error', sass.logError))
+		.pipe(sass(SASS_CONFIG).on('error', sass.logError))
 		.pipe(autoprefixer())
 		.pipe(sourcemaps.write('.'))
-		.pipe(size({
-			showFiles: true,
-			gzip: true
-		}))
+		.pipe(size(GULP_SIZE_DEFAULT_OPTS))
 		.pipe(gulp.dest(PATHS.dist));
 });
 
@@ -161,10 +154,7 @@ gulp.task('serve/static', () => {
 	return gulp
 		.src(PATHS.src.static)
 		.pipe(changed(PATHS.dist))
-		.pipe(size({
-			showFiles: true,
-			gzip: true
-		}))
+		.pipe(size(GULP_SIZE_DEFAULT_OPTS))
 		.pipe(gulp.dest(PATHS.dist));
 });
 
@@ -219,7 +209,7 @@ gulp.task('default', [
 
 function createWebServer () {
 	connect.server({
-		root: PATHS.dist,
-		port: LAB_WEB_SERVER_PORT
+		port: LAB_WEB_SERVER_PORT,
+		root: PATHS.dist
 	});
 }
