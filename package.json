@@ -17,14 +17,13 @@
 	"scripts": {
 		"start": "./node_modules/.bin/gulp start"
 	},
-	"dependencies": {
-		"systemjs": "0.19.x",
-		"es6-shim": "0.33.x"
-	},
+	"dependencies": {},
 	"devDependencies": {
-		"babel-core": "5.8.x",
+		"babel-core": "6.1.x",
+		"babel-preset-es2015": "6.1.x",
+		"babel-preset-stage-1": "6.1.x",
 		"bower": "1.6.x",
-		"del": "2.0.x",
+		"del": "2.1.x",
 		"gulp": "^3.9.0",
 		"gulp-autoprefixer": "3.1.x",
 		"gulp-changed": "1.3.x",
@@ -33,7 +32,7 @@
 		"gulp-sass": "2.1.x",
 		"gulp-size": "2.0.x",
 		"gulp-sourcemaps": "1.6.x",
-		"gulp-tslint": "3.5.x",
+		"gulp-tslint": "3.6.x",
 		"gulp-typescript": "2.9.x",
 		"gulp-util": "3.0.x",
 		"gulp-watch": "4.3.x",

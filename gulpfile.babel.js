@@ -26,8 +26,8 @@ const GULP_SIZE_DEFAULT_OPTS = {
 
 const PATHS = {
 	lib: [
-		'node_modules/systemjs/dist/system.*',
-		'node_modules/es6-shim/es6-shim.*',
+		'bower_components/system.js/dist/system.*',
+		'bower_components/es6-shim/es6-shim.*',
 		'bower_components/angular/angular.js',
 		'bower_components/angular-animate/angular-animate.js',
 		'bower_components/angular-aria/angular-aria.js',
