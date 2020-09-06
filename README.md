@@ -4,6 +4,12 @@
 [![Join the chat at https://gitter.im/rolandjitsu/ng-lab](https://badges.gitter.im/Join%20Chat.svg)](https://gitter.im/rolandjitsu/ng-lab)
 > Playground for experimenting with some of the core features of [AngularJS](https://angularjs.org) and integration with other software and services.
 
+# IMPORTANT NOTICE
+
+This project is no longer maintained and it's definitely out of date! Use at your own risk!
+
+# Setup
+
 This setup is using:
 * [TypeScript](http://www.typescriptlang.org)
 * [ES6 Shim](https://github.com/paulmillr/es6-shim) - necessary for browsers that haven't implemented any or some of the [ES6](http://es6-features.org) features
